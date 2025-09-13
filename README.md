@@ -50,7 +50,7 @@ Application
 
 ## 🚀 Getting Started
 1. Clone the Repository
-git clone https://github.com/Bemnet57/jobboard-backend-django.git
+git clone https://github.com/Bemnet57/job-platform-backend.git
 cd jobboard-platform-backend
 
 2. Create Virtual Environment & Install Dependencies
