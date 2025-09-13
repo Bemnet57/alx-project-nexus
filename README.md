@@ -25,15 +25,15 @@ This project is built as part of the ALX ProDev Backend Engineering program.
 
 ## 🛠️ Tech Stack
 
-- Backend Framework: Django, Django REST Framework
+- Backend Framework: **Django**, **Django REST Framework**
 
-- Database: PostgreSQL
+- Database: **PostgreSQL**
 
-- Authentication: JWT (using djangorestframework-simplejwt)
+- Authentication: **JWT** (using djangorestframework-simplejwt)
 
-- API Docs: drf-yasg (Swagger UI & Redoc)
+- API Docs: **drf-yasg** (Swagger UI & Redoc)
 
-- Containerization: Docker (if time)
+- Containerization: **Docker** (if time)
 
 ## 🗄️ Database Schema
 User
