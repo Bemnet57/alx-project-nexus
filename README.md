@@ -1,41 +1,41 @@
 # job-platform-backend
-📌 Job Board Backend (Django + PostgreSQL)
-📖 Overview
+# 📌 Job Board Platform Backend (Django + PostgreSQL)
+## 📖 Overview
 
 The Job Board Backend is a RESTful API that enables employers to post jobs, applicants to apply for jobs, and admins to manage the platform.
 It demonstrates modern backend development practices using Django REST Framework, PostgreSQL, JWT Authentication, and Swagger API documentation.
 
 This project is built as part of the ALX ProDev Backend Engineering program.
 
-✨ Features
+## ✨ Features
 
-👤 User roles: Admin, Employer, Applicant
+- 👤 User roles: Admin, Employer, Applicant
 
-🔐 Authentication & Authorization: JWT-based login & role-based access
+- 🔐 Authentication & Authorization: JWT-based login & role-based access
 
-💼 Job Management: Employers can post, update, and delete jobs
+- 💼 Job Management: Employers can post, update, and delete jobs
 
-📄 Applications: Applicants can apply to jobs & track status
+- 📄 Applications: Applicants can apply to jobs & track status
 
-🔎 Search & Filter: Jobs can be searched by title, category, and location
+- 🔎 Search & Filter: Jobs can be searched by title, category, and location
 
-📑 API Documentation: Interactive Swagger UI
+- 📑 API Documentation: Interactive Swagger UI
 
-🐳 Dockerized Setup (optional, if you add it later)
+- 🐳 Dockerized Setup (optional, if you add it later)
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
-Backend Framework: Django, Django REST Framework
+- Backend Framework: Django, Django REST Framework
 
-Database: PostgreSQL
+- Database: PostgreSQL
 
-Authentication: JWT (using djangorestframework-simplejwt)
+- Authentication: JWT (using djangorestframework-simplejwt)
 
-API Docs: drf-yasg (Swagger UI & Redoc)
+- API Docs: drf-yasg (Swagger UI & Redoc)
 
-Containerization: Docker (optional)
+- Containerization: Docker (if time)
 
-🗄️ Database Schema
+## 🗄️ Database Schema
 User
  ├── id, username, email, password, role
  └── roles: [ADMIN, EMPLOYER, APPLICANT]
@@ -48,7 +48,7 @@ Application
  ├── id, job_id, applicant_id, status
  └── applicant → User (role=APPLICANT)
 
-🚀 Getting Started
+## 🚀 Getting Started
 1. Clone the Repository
 git clone https://github.com/<your-username>/jobboard-backend-django.git
 cd jobboard-backend-django
@@ -86,7 +86,7 @@ python manage.py runserver
 
 API available at: http://127.0.0.1:8000/api/
 
-🔑 API Endpoints (Core)
+## 🔑 API Endpoints (Core)
 Auth
 
 POST /api/auth/register/ → Register user
@@ -113,7 +113,7 @@ GET /api/applications/ → View applications (Applicant → own, Employer → ap
 
 PUT /api/applications/{id}/status/ → Update status (Employer/Admin)
 
-📑 API Documentation
+## 📑 API Documentation
 
 Interactive docs available at:
 
@@ -127,13 +127,13 @@ Run unit tests:
 
 python manage.py test
 
-📦 Deployment
+## 📦 Deployment
 
-(Optional section — fill if you deploy on Heroku, Render, or Docker.)
+(Deployment details)
 
-🙌 Acknowledgements
+## 🙌 Acknowledgements
 
-ALX ProDev Backend Engineering Program
+ALX ProDev Backend Engineering Program and Mentors
 
 Django REST Framework community
 
