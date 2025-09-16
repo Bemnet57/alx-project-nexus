@@ -1,2 +1,14 @@
 venv
 .env
+
+# Ignore Python-specific files
+*.pyc
+__pycache__/
+
+# Ignore Django specific files
+db.sqlite3
+
+# Ignore IDE and OS files
+.vscode/
+.idea/
+.DS_Store
