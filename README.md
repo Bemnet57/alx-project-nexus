@@ -133,7 +133,7 @@ python manage.py test
 
 ## 🙌 Acknowledgements
 
-ALX ProDev Backend Engineering Program and Mentors
+ALX ProDev Backend Engineering Program, Mentors and Peers
 
 Django REST Framework community
 
