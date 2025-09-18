@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser
 # ENUM for roles
 class UserRole(models.TextChoices):
     EMPLOYER = 'employer', 'Employer'
-    HOST = 'host', 'Host'
+    APPLICANT = 'applicant', 'Applicant'
     ADMIN = 'admin', 'Admin'
 
 class User(AbstractUser):
