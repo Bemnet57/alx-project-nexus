@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "rest_framework",         # ✅ fixed
     "drf_yasg",
     "users",
+    "jobs",
 ]
 
 MIDDLEWARE = [
