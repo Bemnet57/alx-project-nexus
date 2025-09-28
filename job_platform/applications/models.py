@@ -13,6 +13,7 @@ class StatusChoice(models.TextChoices):
 class Application(models.Model):
   job = models.ForeignKey('jobs.Job', on_delete=models.CASCADE, related_name='applications') #, 
   applicant = models.ForeignKey(User, on_delete=models.CASCADE, related_name='job_applications') #, limit_choices_to={'role': UserRole.EMPLOYER}, help_text='The user who posted this job, must have the role of EMPLOYER.')
+  cover_letter = models.TextField(blank=True)
   status = models.CharField(max_length=10, choices=StatusChoice.choices, default=StatusChoice.PENDING)
   applied_at = models.DateTimeField(auto_now_add=True)
 
