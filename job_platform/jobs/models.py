@@ -6,10 +6,10 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 class Job(models.Model):
-  title = models.CharField(max_length=255)
+  title = models.CharField(max_length=255, db_index=True)
   description = models.TextField()
-  location = models.CharField(max_length=200)
-  category = models.CharField(max_length=100)
+  location = models.CharField(max_length=200, db_index=True)
+  category = models.CharField(max_length=100, db_index=True)
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
   employer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='jobs_posted') # limit_choices_to={'role': UserRole.EMPLOYER}, help_text='The user who posted this job, must have the role of EMPLOYER.')
