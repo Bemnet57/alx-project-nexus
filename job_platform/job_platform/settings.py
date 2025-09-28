@@ -11,10 +11,10 @@ from datetime import timedelta
 # Build paths
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Environment variables
+# Environment variables FOR PRODUCTION REMOVE COMMENTING
 env = environ.Env(
-    DEBUG=(bool, False)
-)
+     DEBUG=(bool, False)
+ )
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # SECURITY WARNING: keep the secret key secret!
@@ -24,7 +24,8 @@ SECRET_KEY = env("SECRET_KEY", default="unsafe-secret-key")
 DEBUG = env("DEBUG", default=False)
 
 # Allowed hosts (important for Render)
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["localhost", "127.0.0.1", ".onrender.com"])
+# ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["localhost", "127.0.0.1", ".onrender.com"])
+ALLOWED_HOSTS = ['.railway.app'] 
 
 # Applications
 INSTALLED_APPS = [
@@ -39,10 +40,12 @@ INSTALLED_APPS = [
     "users",
     "jobs",
     "applications",
+    'rest_framework_simplejwt.token_blacklist', # token blacklisting (for logout functionality).
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -78,6 +81,14 @@ DATABASES = {
     )
 }
 
+DATABASES = {
+    'default': dj_database_url.config(
+        default=env("DATABASE_URL",
+                    default="postgres;//..."),
+                    conn_max_age=600,
+                    ssl_require=True
+    )
+}
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
@@ -100,6 +111,10 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.IsAuthenticated",
     ),
+    "DEFAULT_FILTER_BACKENDS": (
+        "rest_framework.filters.SearchFilter",
+        "rest_framework.filters.OrderingFilter",
+    )
 }
 
 SIMPLE_JWT = {
@@ -109,12 +124,19 @@ SIMPLE_JWT = {
 }
 
 # Static files
-STATIC_URL = "static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"  #  needed for Render
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [BASE_DIR / "static"] #  configuration for development static files
+
+STATICFILES_DIRS = [BASE_DIR / "static"]
+# STATIC_URL = "/static/"
+# STATICFILES_DIRS = [BASE_DIR / "static"]
+# STATIC_ROOT = BASE_DIR / "staticfiles"  #  needed for Render
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-AUTH_USER_MODEL = "users.User" #Since am using a custom User model by overriding AbstarctUser, i need to set this before the 1st migrations, otherwise it'll be a prob
+#AUTH_USER_MODEL = "users.User" User is django's built in user, which i then customized as CustomUser
+AUTH_USER_MODEL = "users.CustomUser" #Since am using a custom User model by overriding AbstarctUser, i need to set this before the 1st migrations, otherwise it'll be a prob
 
 
 # """
