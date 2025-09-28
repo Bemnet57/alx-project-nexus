@@ -21,8 +21,6 @@ This project is built as part of the ALX ProDev Backend Engineering program.
 
 - 📑 API Documentation: Interactive Swagger UI
 
-- 🐳 Dockerized Setup (optional, if you add it later)
-
 ## 🛠️ Tech Stack
 
 - Backend Framework: **Django**, **Django REST Framework**
