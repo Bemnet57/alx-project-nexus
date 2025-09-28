@@ -12,3 +12,6 @@ db.sqlite3
 .vscode/
 .idea/
 .DS_Store
+
+#for deployment avoid git tracking
+staticfiles
