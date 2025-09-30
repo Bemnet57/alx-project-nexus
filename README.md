@@ -71,7 +71,7 @@ DATABASES = {\
         'HOST': 'localhost',\
         'PORT': '5432',\
     }\
-}\
+}
 
 Run migrations:  
 python manage.py migrate  
