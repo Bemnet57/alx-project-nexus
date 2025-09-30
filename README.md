@@ -48,15 +48,15 @@ Application
 
 ## 🚀 Getting Started
 1. Clone the Repository
-git clone https://github.com/Bemnet57/job-platform-backend.git
+git clone https://github.com/Bemnet57/alx-project-nexus.git
 cd jobboard-platform-backend
 
 2. Create Virtual Environment & Install Dependencies
-python -m venv venv
-source venv/bin/activate   # Mac/Linux
-venv\Scripts\activate      # Windows
+python -m venv venv  
+source venv/bin/activate   # Mac/Linux  
+venv\Scripts\activate      # Windows  
 
-pip install -r requirements.txt
+pip install -r requirements.txt  
 
 3. Setup Database (PostgreSQL)
 
