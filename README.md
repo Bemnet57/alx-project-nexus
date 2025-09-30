@@ -33,6 +33,8 @@ This project is built as part of the ALX ProDev Backend Engineering program.
 
 - Containerization: **Docker** (if time)
 
+- Deployment: **Railway** 
+
 ## 🗄️ Database Schema
 User
  ├── id, username, email, password, role
@@ -57,8 +59,7 @@ source venv/bin/activate   # Mac/Linux
 venv\Scripts\activate      # Windows    
 pip install -r requirements.txt  
 
-3. **Setup Database (PostgreSQL)**
-
+3. **Setup Database (PostgreSQL)**  
 Update settings.py with your DB credentials:  
 
 DATABASES = {
@@ -76,10 +77,8 @@ Run migrations:
 
 python manage.py migrate  
 
-4. **Run the Development Server**
-python manage.py runserver
-
-
+4. **Run the Development Server**  
+python manage.py runserver  
 API available at: http://127.0.0.1:8000/api/
 
 ## 🔑 API Endpoints (Core)
