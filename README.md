@@ -62,19 +62,18 @@ pip install -r requirements.txt
 3. **Setup Database (PostgreSQL)**  
 Update settings.py with your DB credentials:  
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jobboard_db',
-        'USER': 'postgres',
-        'PASSWORD': 'yourpassword',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+DATABASES = {\
+    'default': {\
+        'ENGINE': 'django.db.backends.postgresql',\
+        'NAME': 'jobboard_db',\
+        'USER': 'postgres',\
+        'PASSWORD': 'yourpassword',\
+        'HOST': 'localhost',\
+        'PORT': '5432',\
+    }\
+}\
 
 Run migrations:  
-
 python manage.py migrate  
 
 4. **Run the Development Server**  
