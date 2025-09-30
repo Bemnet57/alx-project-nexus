@@ -59,7 +59,7 @@ pip install -r requirements.txt
 
 3. **Setup Database (PostgreSQL)**
 
-Update settings.py with your DB credentials:
+Update settings.py with your DB credentials:  
 
 DATABASES = {
     'default': {
@@ -72,10 +72,9 @@ DATABASES = {
     }
 }
 
+Run migrations:  
 
-Run migrations:
-
-python manage.py migrate
+python manage.py migrate  
 
 4. **Run the Development Server**
 python manage.py runserver
